@@ -27,31 +27,13 @@ export default function ChiefEngineer() {
       </motion.div>
 
       <div style={styles.splitLayout}>
-        {/* Left: Photo + Stats */}
+        {/* Left: Stats */}
         <motion.div
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeLeft}
           style={styles.leftCol}
         >
-          <div style={styles.photoWrapper}>
-            <div style={styles.photoAccentBorder} aria-hidden="true" />
-            <img
-              src={engineer.photo}
-              alt={`Portrait de ${engineer.name}`}
-              style={styles.photo}
-            />
-            <motion.div
-              style={styles.expBadge}
-              initial={{ scale: 0 }}
-              animate={inView ? { scale: 1 } : { scale: 0 }}
-              transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-            >
-              <span style={styles.expBadgeValue}>{engineer.experience}+</span>
-              <span style={styles.expBadgeLabel}>ans d'expérience</span>
-            </motion.div>
-          </div>
-
           <motion.div
             style={styles.statsGrid}
             initial="hidden"
